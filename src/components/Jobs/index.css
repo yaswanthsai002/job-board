@@ -1,0 +1,140 @@
+.jobs-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem 0;
+}
+
+.search-input-container {
+  background: transparent;
+  border: 2px solid #475569;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+}
+
+.search-input {
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  caret-color: #fff;
+  flex-grow: 1;
+}
+
+.search-icon {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.search-btn {
+  width: 15%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  background-color: #272727;
+  border-top-right-radius: 0.15rem;
+  border-bottom-right-radius: 0.15rem;
+}
+
+.loader-container {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jobs-filters-and-jobs-list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  gap: 2rem;
+}
+
+.profile-and-job-filters-container {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.jobs-list-container {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem 0;
+}
+
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem 0;
+}
+
+.no-jobs-found-container,
+.failure-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.75rem 0;
+}
+
+.failure-view-img,
+.no-jobs-found-img {
+  width: 40%;
+  object-fit: contain;
+}
+
+.failure-view-heading,
+.no-jobs-found-heading {
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+.no-jobs-found-description,
+.failure-view-description {
+  color: #7e858e;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .jobs-page-container,
+  .jobs-filters-and-jobs-list-container {
+    flex-direction: column;
+  }
+  .jobs-list-container,
+  .profile-and-job-filters-container {
+    width: 100%;
+    height: 50%;
+    align-items: center;
+  }
+
+  .loader-container,
+  .search-input-container {
+    width: 100%;
+  }
+
+  .jobs-list {
+    align-items: center;
+  }
+
+  .failure-view-img,
+  .no-jobs-found-img {
+    width: 75%;
+    object-fit: contain;
+  }
+}

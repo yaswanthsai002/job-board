@@ -1,0 +1,83 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #272727;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.website-logo {
+  width: 125px;
+  object-fit: contain;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 2rem;
+}
+
+.nav-list-sm {
+  display: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-item {
+  list-style-type: none;
+  color: #f8fafc;
+  font-size: 1.125rem;
+}
+
+.logout-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f8fafc;
+  background-color: #6366f1;
+  border-radius: 0.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list,
+  .logout-btn {
+    display: none;
+  }
+  .nav-list-sm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+  }
+
+  .logout-btn-sm {
+    display: block;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-icon,
+  .jobs-icon,
+  .logout-icon {
+    font-size: 2rem;
+    color: #f8fafc;
+  }
+}

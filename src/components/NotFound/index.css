@@ -1,0 +1,13 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  gap: 0.5rem 0;
+}
+
+.not-found-heading {
+  font-weight: 500;
+}

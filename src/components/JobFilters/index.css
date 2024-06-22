@@ -1,0 +1,47 @@
+.employment-types-filters-container,
+.salary-range-filters-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.divider {
+  width: 80%;
+}
+
+.employment-types-filters-heading,
+.salary-range-filters-heading {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.filter-input-grp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 0.5rem;
+  margin: 0.5rem 0;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+label {
+  font-weight: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .employment-types-filters-container,
+  .salary-range-filters-container {
+    width: 100%;
+  }
+
+  .divider {
+    width: 100%;
+  }
+}
