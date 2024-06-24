@@ -72,7 +72,6 @@ export default class Jobs extends Component {
     const {employmentTypeInput, minimumPackageInput, searchInput} = this.state
     const fetchApiUrl = `https://apis.ccbp.in/jobs?employment_type=${employmentTypeInput.join()}&minimum_package=${minimumPackageInput}&search=${searchInput}`
     const jwtToken = Cookies.get('jwt_token')
-    console.log(fetchApiUrl)
 
     const fetchOptions = {
       method: 'GET',
@@ -140,7 +139,7 @@ export default class Jobs extends Component {
       />
       <h1 className="failure-view-heading">Oops! Something Went Wrong</h1>
       <p className="failure-view-description">
-        We cannot find the page you are looking for.
+        We cannot seem to find the page you are looking for.
       </p>
       <button type="button" className="retry-btn" onClick={this.getJobs}>
         Retry
@@ -196,15 +195,12 @@ export default class Jobs extends Component {
               placeholder="Search"
               id="searchInput"
             />
-            <button
-              type="button"
-              aria-label="jobs search button"
+
+            <BsSearch
+              className="search-icon"
               data-testid="searchButton"
-              className="search-btn"
               onClick={this.getJobs}
-            >
-              <BsSearch className="search-icon" />
-            </button>
+            />
           </div>
           <div className="jobs-filters-and-jobs-list-container">
             <div className="profile-and-job-filters-container">

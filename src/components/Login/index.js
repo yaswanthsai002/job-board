@@ -58,12 +58,14 @@ export default class Login extends Component {
             <div className="input-grp">
               <label htmlFor="username">USERNAME</label>
               <input
-                type="username"
+                type="text"
                 className="username-input"
                 onChange={this.onUsernameChange}
                 value={username}
                 placeholder="Username"
+                autoComplete="username"
                 id="username"
+                required
               />
             </div>
             <div className="input-grp">
@@ -74,7 +76,9 @@ export default class Login extends Component {
                 onChange={this.onPasswordChange}
                 value={password}
                 placeholder="Password"
+                autoComplete="new-password"
                 id="password"
+                required
               />
             </div>
             <button type="submit" className="submit-btn">

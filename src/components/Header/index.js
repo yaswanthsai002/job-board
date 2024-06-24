@@ -42,14 +42,7 @@ const Header = props => {
             <BsBriefcaseFill className="jobs-icon" />
           </li>
         </Link>
-        <button
-          type="button"
-          className="logout-btn-sm"
-          onClick={handleLogout}
-          aria-label="logout button"
-        >
-          <FiLogOut className="logout-icon" />
-        </button>
+        <FiLogOut className="logout-icon" onClick={handleLogout} />
       </ul>
     </nav>
   )
