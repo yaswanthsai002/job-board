@@ -8,6 +8,9 @@ const JobFilters = props => {
     salaryRangesList,
     addEmploymentType,
     setMinimumPackageInput,
+    locationInput,
+    jobLocationsList,
+    addLocation,
   } = props
 
   const renderEmploymentFilters = () => (
@@ -24,6 +27,26 @@ const JobFilters = props => {
               checked={employmentTypeInput.includes(type.employmentTypeId)}
             />
             <label htmlFor={type.employmentTypeId}>{type.label}</label>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+
+  const renderLocationFilters = () => (
+    <div className="location-filters-container">
+      <h1 className="location-filters-heading">Location</h1>
+      <ul className="filters-container">
+        {jobLocationsList.map(type => (
+          <li className="filter-input-grp" key={type.locationId}>
+            <input
+              type="checkbox"
+              name="location"
+              id={type.locationId}
+              onChange={() => addLocation(type.locationId)}
+              checked={locationInput.includes(type.locationId)}
+            />
+            <label htmlFor={type.locationId}>{type.locationName}</label>
           </li>
         ))}
       </ul>
@@ -53,6 +76,7 @@ const JobFilters = props => {
   return (
     <>
       {renderEmploymentFilters()}
+      {renderLocationFilters()}
       <hr className="divider" />
       {renderSalaryRangeFilters()}
     </>

@@ -1,4 +1,5 @@
 .employment-types-filters-container,
+.location-filters-container,
 .salary-range-filters-container {
   display: flex;
   flex-direction: column;
@@ -11,7 +12,15 @@
   width: 80%;
 }
 
+.filters-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .employment-types-filters-heading,
+.location-filters-heading,
 .salary-range-filters-heading {
   font-weight: 500;
   font-size: 1.25rem;
@@ -37,6 +46,7 @@ label {
 
 @media screen and (max-width: 768px) {
   .employment-types-filters-container,
+  .location-filters-container,
   .salary-range-filters-container {
     width: 100%;
   }

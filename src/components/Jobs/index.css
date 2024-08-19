@@ -15,10 +15,11 @@
   justify-content: space-between;
   align-items: center;
   width: 45%;
+  padding: 0 0.5rem;
 }
 
 .search-input {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.25rem;
   border: none;
   outline: none;
   background: transparent;

@@ -32,13 +32,23 @@ const salaryRangesList = [
   {salaryRangeId: '4000000', label: '40 LPA and above'},
 ]
 
+const jobLocationsList = [
+  {locationId: 'Hyderabad', locationName: 'Hyderabad'},
+  {locationId: 'Bangalore', locationName: 'Bangalore'},
+  {locationId: 'Chennai', locationName: 'Chennai'},
+  {locationId: 'Delhi', locationName: 'Delhi'},
+  {locationId: 'Mumbai', locationName: 'Mumbai'},
+]
+
 export default class Jobs extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
     employmentTypeInput: [],
     minimumPackageInput: '',
     searchInput: '',
+    allJobs: [],
     jobs: [],
+    locationInput: [],
   }
 
   componentDidMount() {
@@ -60,6 +70,30 @@ export default class Jobs extends Component {
         this.getJobs()
       },
     )
+
+  addLocation = id => {
+    this.setState(
+      prevState => ({
+        locationInput: !prevState.locationInput.includes(id)
+          ? [...prevState.locationInput, id]
+          : prevState.locationInput.filter(location => location !== id),
+      }),
+      () => {
+        const {locationInput} = this.state
+        console.log('Location Input', locationInput)
+        this.filterJobs()
+      },
+    )
+  }
+
+  filterJobs = () => {
+    const {locationInput, allJobs} = this.state
+    const filteredJobs =
+      locationInput.length > 0
+        ? allJobs.filter(job => locationInput.includes(job.location))
+        : allJobs
+    this.setState({jobs: filteredJobs})
+  }
 
   setMinimumPackageInput = id =>
     this.setState({minimumPackageInput: id}, () => {
@@ -101,6 +135,7 @@ export default class Jobs extends Component {
               ? apiStatusConstants.success
               : apiStatusConstants.notFound,
           jobs,
+          allJobs: jobs,
         })
       } else {
         this.setState({apiStatus: apiStatusConstants.failure})
@@ -179,7 +214,12 @@ export default class Jobs extends Component {
   }
 
   render() {
-    const {employmentTypeInput, minimumPackageInput, searchInput} = this.state
+    const {
+      employmentTypeInput,
+      minimumPackageInput,
+      searchInput,
+      locationInput,
+    } = this.state
     return (
       <>
         <Header />
@@ -213,6 +253,9 @@ export default class Jobs extends Component {
                 salaryRangesList={salaryRangesList}
                 addEmploymentType={this.addEmploymentType}
                 setMinimumPackageInput={this.setMinimumPackageInput}
+                locationInput={locationInput}
+                jobLocationsList={jobLocationsList}
+                addLocation={this.addLocation}
               />
             </div>
             {this.renderContent()}
